@@ -14,10 +14,11 @@ import org.junit.Test;
  */
 public class DragonTest
 {
-	public Dragon	dragon;
-	public Epee		excalibur;
-	public Epee		twinkle;
-	public Epee		caliburnus;
+	private Dragon	dragon;
+	private Dragon	defaultDragon;
+	private Epee	excalibur;
+	private Epee	twinkle;
+	private Epee	caliburnus;
 
 	/**
 	 * Default constructor for test class DragonTest
@@ -40,6 +41,7 @@ public class DragonTest
 		excalibur = new Epee("Excalibur");
 		caliburnus = new Epee("Caliburnus");
 		twinkle = new Epee("Twinkle");
+		defaultDragon = new Dragon();
 	}
 
 	/**
@@ -49,6 +51,20 @@ public class DragonTest
 	 */
 	@After
 	public void tearDown() {
+	}
+
+	@Test
+	public void testGetter() {
+		assertEquals(defaultDragon.getCouleur(), "red");
+		assertEquals(defaultDragon.getOr(), 0);
+	}
+
+	@Test
+	public void testSetter() {
+		defaultDragon.setCouleur("gris");
+		defaultDragon.setOr(23);
+		assertEquals(defaultDragon.getOr(), 23);
+		assertEquals(defaultDragon.getCouleur(), "gris");
 	}
 
 	@Test

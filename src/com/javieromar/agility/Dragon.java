@@ -48,11 +48,16 @@ public class Dragon
 	 * Constructor for objects of class Dragon
 	 */
 	public Dragon(String couleur, int or) {
-		this.couleur = couleur;
+		// this.couleur = couleur;
+		setCouleur(couleur);
 		this.or = or;
 
 		epee = new ArrayList<>();
+	}
 
+	public Dragon() {
+		couleur = "red";
+		or = 0;
 	}
 
 	/**
@@ -74,12 +79,5 @@ public class Dragon
 
 	public String parlerDeMesEpees() {
 		return "J'ai " + epee.size() + " epees";
-	}
-
-	public static void main(String[] args) {
-		Dragon dragon = new Dragon("rouge", 666);
-		Epee epee = new Epee("Excalibur");
-		dragon.addEpee(epee);
-		System.out.println(dragon);
 	}
 }
